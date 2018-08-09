@@ -1,8 +1,6 @@
 
 var Task = require('../models/task.js');
 
-
-
     class TaskController {
         constructor() {
         }
