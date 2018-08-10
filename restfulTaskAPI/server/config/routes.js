@@ -8,6 +8,9 @@ module.exports = function(app){
     app.patch('/tasks/:id', TaskController.update);
     app.delete('/tasks/:id', TaskController.destroy); 
     app.listen(8000, TaskController.connect);
-};
+    app.all("*", (req,res,next) => {
+        res.sendFile(path.resolve("./client/public/dist/public/index.html"))
+    });
+}; 
 
 

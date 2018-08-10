@@ -1,13 +1,13 @@
 
 var Task = require('../models/task.js');
 
-    class TaskController {
+    class TaskController { 
         constructor() {
         }
         all(req, res) {
             Task.find({}, function(err, tasks) {
                 if (err) {
-                  console.log("Returned error", err);
+                //   console.log("Returned error", err);
                   res.json({message: "Error", error: err});
                 } else {
                   res.json({message: "Success", tasks: tasks})
@@ -31,10 +31,10 @@ var Task = require('../models/task.js');
             let id = req.params.id;
             Task.find({_id: id}, function(err, task) {
               if (err) {
-                  console.log("Returned error", err);
+                //   console.log("Returned error", err);
                   res.json({message: "Error", error: err});
               } else {
-                  console.log('successfully retrieved a task!', task);
+                //   console.log('successfully retrieved a task!', task);
                   res.json({message: "Success", task: task})
               }
             })
@@ -57,12 +57,11 @@ var Task = require('../models/task.js');
                   task.completed = req.body.completed;
                 }
                 task.save(function(err) {
-                  // if there is an error console.log that something went wrong!
                   if (err) {
-                      console.log("Returned error", err);
+                    //   console.log("Returned error", err);
                       res.json({message: "Error", error: err});
                   } else { // else console.log that we did well and then redirect to the root route
-                      console.log('successfully edited a task!');
+                    //   console.log('successfully edited a task!');
                       res.json(task)
                   }
                 })

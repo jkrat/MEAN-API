@@ -12,7 +12,9 @@ app.use(session({
     saveUniitialze:true,
     cookie:{maxAge:600000}
 }));
-app.use(express.static(__dirname + "/static"));
+// app.use(express.static(__dirname + "/static")); 
+app.use(express.static( __dirname + '/client/public/dist/public' ));
+
 
 // ----------- requirements ------------------
 

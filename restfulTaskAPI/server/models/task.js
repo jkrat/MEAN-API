@@ -7,4 +7,4 @@ var Task = mongoose.model('Task', new mongoose.Schema({
     completed: { type: Boolean, default: true }
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }}));
 
-module.exports = Task;
+module.exports = Task; 
